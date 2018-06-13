@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -22,6 +24,8 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  config.action_mailer.delivery_method = :test
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
